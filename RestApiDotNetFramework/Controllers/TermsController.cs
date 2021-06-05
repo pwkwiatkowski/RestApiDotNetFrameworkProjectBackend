@@ -6,11 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using RestApiDotNetFramework.ErrorsHandling;
 using RestApiDotNetFramework.Models;
 
 namespace RestApiDotNetFramework.Controllers
 {
+    [EnableCors(origins: "http://127.0.0.1:5500", headers: "*", methods: "*")]
     public class TermsController : ApiController
     {
         readonly RestApiCsharpDbEntities db = new RestApiCsharpDbEntities();
